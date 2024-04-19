@@ -81,7 +81,7 @@ def make_environment(dirs: Optional[Tuple[str, ...]] = None):
     # Loader for the templates
     loader = jinja2.FileSystemLoader(dirs)
     # Environment of the template engine
-    env = jinja2.Environment(loader=loader, trim_blocks=True, lstrip_blocks=True)
+    env = jinja2.Environment(loader=loader, trim_blocks=True, lstrip_blocks=True, autoescape=True)
     # Custom filters
     _set_filters(env)
     return env
